@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimize DFA</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/cytoscape@3.20.0/dist/cytoscape.min.js"></script>
+
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <a href="home.html" class="logo"><img src="cadt.jpg" alt="CADT"></a>
+        <ul>
+            <li><a href="home.html" class="nav-link active" >Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="calculate.html" class="nav-link" style="color: rgb(255, 72, 0);">Calculate</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        <h1 class="finite">Finite Automaton Designer</h1>
+        <form action="" id="fa-form">
+
+            <h1 class="title">Design a Finite Automaton</h1>
+            <label for="states">States</label>
+            <input type="text" id="states" required placeholder="q0,q1,q2"><br>
+
+            <label for="alphabet">Alphabet</label>
+            <input type="text" id="alphabet" required placeholder="a,b or 0,1"><br>
+
+            <label for="transitions">Transitions</label>
+            <input type="text" id="transitions" required placeholder="Enter Transitions"><br>
+
+            <label for="start-state">Start State:</label>
+            <input type="text" id="start-state" required placeholder="Enter start state"><br>
+
+            <label for="final-states">Accept States (final states):</label>
+            <input type="text" id="final-states" required placeholder="Enter final state"><br>
+
+            <button type="submit">Create FA</button>
+        </form>
+
+        <h2>Test Finite Automaton</h2>
+        <button id="test-deterministic">Check if FA is Deterministic</button>
+        <button id="test-string">Test String Acceptance</button>
+        <input type="text" id="test-string-input" placeholder="Enter string"><br>
+
+        <h2>Transformations</h2>
+        <button id="convert-to-dfa">Convert NFA to DFA</button>
+        <button id="minimize-dfa">Minimize DFA</button>
+
+        
+        <div class="fa-display" ></div>
+        <div id="cy" style="width: 750px; height: 600px;"></div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
